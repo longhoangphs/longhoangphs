@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo thị trường chứng khoán - 15/04/2026</title>
+<style>
+  :root {
+    --bg:#f4f8f5;
+    --card:#ffffff;
+    --text:#173024;
+    --muted:#607468;
+    --line:#d8e6dc;
+    --green:#1f8f5f;
+    --green-soft:#e9f5ee;
+    --amber:#f3c94d;
+    --red:#d86b63;
+    --shadow:0 12px 28px rgba(21,44,33,.08);
+    --radius:18px;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(180deg, #f7fbf8 0%, #eef6f1 100%);
+    color: var(--text);
+  }
+  .container { max-width: 1260px; margin: 0 auto; padding: 28px; }
+  .hero {
+    background: linear-gradient(135deg, #165d42 0%, #1f8f5f 45%, #8bcf71 100%);
+    color:#fff; border-radius:28px; padding:30px 34px; box-shadow: var(--shadow);
+  }
+  .hero h1 { margin:0 0 6px; font-size:34px; line-height:1.15; }
+  .hero p { margin:6px 0; font-size:15px; opacity:.96; }
+  .grid { display:grid; gap:18px; margin-top:20px; }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  .g3 { grid-template-columns: repeat(3, 1fr); }
+  .g2 { grid-template-columns: repeat(2, 1fr); }
+  .card {
+    background: var(--card); border:1px solid var(--line); border-radius: var(--radius);
+    padding:20px; box-shadow: var(--shadow);
+  }
+  .kpi .label { font-size:13px; color: var(--muted); }
+  .kpi .value { font-size:30px; font-weight:800; margin-top:6px; }
+  .kpi .note { font-size:13px; color: var(--muted); margin-top:6px; line-height:1.45; }
+  h2 { margin:0 0 14px; font-size:20px; }
+  h3 { margin:0 0 10px; font-size:16px; }
+  p { line-height:1.6; }
+  .summary {
+    background:#f9fcfa; border:1px dashed #bed8c4; border-radius:14px; padding:14px 16px; color:#40584d;
+  }
+  table { width:100%; border-collapse: collapse; }
+  th, td { padding:12px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:14px; }
+  th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  tr:last-child td { border-bottom:none; }
+  .badge {
+    display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:700;
+  }
+  .positive { background:#e6f5ea; color:#1f8f5f; }
+  .neutral { background:#fff4d6; color:#9a6b00; }
+  .cautious { background:#f8e3e1; color:#a34139; }
+  .rankbar {
+    height:10px; background:#edf3ee; border-radius:999px; overflow:hidden; border:1px solid var(--line);
+  }
+  .rankfill {
+    height:100%; background: linear-gradient(90deg, #f2cd5c, #1f8f5f);
+  }
+  .legend {
+    display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; color:var(--muted); font-size:12px;
+  }
+  .dot { width:10px; height:10px; display:inline-block; border-radius:50%; margin-right:6px; }
+  .heatmap {
+    display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;
+  }
+  .heatcell {
+    border-radius:16px; padding:18px; min-height:118px; display:flex; flex-direction:column; justify-content:space-between;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.15);
+  }
+  .heatcell .name { font-size:14px; font-weight:700; opacity:.95; }
+  .heatcell .pct { font-size:28px; font-weight:800; }
+  .footnote { color:var(--muted); font-size:12px; line-height:1.5; }
+  .small { font-size:13px; color:var(--muted); }
+  ul { margin:10px 0 0 18px; padding:0; }
+  li { margin:6px 0; }
+  .source-list { margin-top:12px; padding-left:18px; color:var(--muted); }
+  @media (max-width: 980px) {
+    .g4, .g3, .g2, .heatmap { grid-template-columns: 1fr; }
+    .hero h1 { font-size:28px; }
+    svg { width:100%; height:auto; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <section class="hero">
+    <h1>BÁO CÁO THỊ TRƯỜNG CHỨNG KHOÁN</h1>
+    <p><strong>Ngày phát hành:</strong> 15/04/2026</p>
+    <p><strong>Chủ đề:</strong> Tổng hợp nhận định từ các công ty chứng khoán, diễn biến thị trường gần nhất và chiến lược khuyến nghị cho nhà đầu tư.</p>
+  </section>
+
+  <section class="grid g4">
+    <div class="card kpi">
+      <div class="label">Xu hướng ngắn hạn</div>
+      <div class="value">Tích cực thận trọng</div>
+      <div class="note">Phần lớn các CTCK nghiêng về kịch bản chỉ số tiếp tục hồi phục nhưng sẽ rung lắc mạnh gần vùng cản.</div>
+    </div>
+    <div class="card kpi">
+      <div class="label">Vùng kháng cự trọng yếu</div>
+      <div class="value">1.780 – 1.800</div>
+      <div class="note">Đây là vùng được nhiều tổ chức cùng nhắc đến trong báo cáo chiến lược cho phiên 15/04.</div>
+    </div>
+    <div class="card kpi">
+      <div class="label">Nhóm dẫn dắt nổi bật</div>
+      <div class="value">BĐS • Thép • NH</div>
+      <div class="note">Nhóm vốn hóa lớn, đặc biệt cổ phiếu liên quan Vingroup, thép và một phần ngân hàng, đang giữ vai trò dẫn nhịp.</div>
+    </div>
+    <div class="card kpi">
+      <div class="label">Thông điệp hành động</div>
+      <div class="value">Giữ vị thế, mua chọn lọc</div>
+      <div class="note">Ưu tiên cơ cấu khi điều chỉnh; hạn chế mua đuổi mạnh khi chỉ số tiến sát vùng 1.800 điểm.</div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <h2>1. Tóm tắt điều hành</h2>
+      <div class="summary">
+        Thị trường chứng khoán Việt Nam đang ở trạng thái hồi phục ngắn hạn với nền hỗ trợ tốt hơn so với đầu tháng 4. Tuy nhiên, độ lan tỏa vẫn chưa thật sự đồng đều và động lực tăng hiện còn phụ thuộc nhiều vào một số nhóm trụ. Do đó, chiến lược phù hợp trong ngắn hạn là duy trì tỷ trọng hợp lý, ưu tiên nắm giữ các cổ phiếu có nền tích lũy tốt và chỉ gia tăng ở các nhịp điều chỉnh lành mạnh.
+      </div>
+      <ul>
+        <li>Chiến lược chủ đạo: không mua đuổi, giải ngân có chọn lọc.</li>
+        <li>Nhóm quan sát chính: bất động sản vốn hóa lớn, thép, ngân hàng.</li>
+        <li>Rủi ro ngắn hạn: áp lực chốt lời khi chỉ số tiệm cận 1.780 – 1.800 điểm.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. Thông điệp nhất quán từ các CTCK</h2>
+      <table>
+        <tr><th>CTCK</th><th>Luận điểm chính</th><th>Định hướng</th></tr>
+        <tr><td>TPS</td><td>Đà hồi phục có thể mở rộng thành xu hướng tăng mới.</td><td><span class="badge positive">Bullish</span></td></tr>
+        <tr><td>AIS</td><td>Xu hướng ngắn hạn duy trì tăng nếu vùng hỗ trợ được giữ vững.</td><td><span class="badge positive">Bullish</span></td></tr>
+        <tr><td>VCBS</td><td>Dòng tiền luân chuyển tích cực, có thể tận dụng rung lắc để cơ cấu danh mục.</td><td><span class="badge positive">Khá tích cực</span></td></tr>
+        <tr><td>VIX</td><td>Cuối phiên cải thiện về điểm số, thanh khoản và giao dịch khối ngoại.</td><td><span class="badge neutral">Tích cực có điều kiện</span></td></tr>
+        <tr><td>CSI</td><td>Nhịp hồi còn tiếp diễn nhưng vùng cản gần khiến dư địa mua mới không còn rộng.</td><td><span class="badge neutral">Trung lập</span></td></tr>
+        <tr><td>SHS</td><td>Thị trường cải thiện nhờ trụ lớn nhưng cơ hội lan tỏa chưa nhiều.</td><td><span class="badge cautious">Thận trọng</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>3. Diễn biến VN-Index và thanh khoản</h2>
+      <div class="small">Biểu đồ dưới đây thể hiện 6 phiên giao dịch hoàn tất gần nhất đến ngày 14/04/2026.</div>
+      <h3 style="margin-top:16px;">VN-Index</h3>
+      <svg viewBox="0 0 980 320" role="img" aria-label="Diễn biến VN-Index 6 phiên">
+        <rect x="0" y="0" width="980" height="320" fill="white"/>
+        <line x1="60" y1="20" x2="60" y2="270" stroke="#c9d8ce"/>
+        <line x1="60" y1="270" x2="960" y2="270" stroke="#c9d8ce"/>
+        <line x1="60" y1="243.6" x2="960" y2="243.6" stroke="#eef3ef"/><text x="8" y="247.6" font-size="12" fill="#71867a">1680</text><line x1="60" y1="201.3" x2="960" y2="201.3" stroke="#eef3ef"/><text x="8" y="205.3" font-size="12" fill="#71867a">1700</text><line x1="60" y1="159.0" x2="960" y2="159.0" stroke="#eef3ef"/><text x="8" y="163.0" font-size="12" fill="#71867a">1720</text><line x1="60" y1="116.6" x2="960" y2="116.6" stroke="#eef3ef"/><text x="8" y="120.6" font-size="12" fill="#71867a">1740</text><line x1="60" y1="74.3" x2="960" y2="74.3" stroke="#eef3ef"/><text x="8" y="78.3" font-size="12" fill="#71867a">1760</text><line x1="60" y1="32.0" x2="960" y2="32.0" stroke="#eef3ef"/><text x="8" y="36.0" font-size="12" fill="#71867a">1780</text>
+        <polyline fill="none" stroke="#1f8f5f" stroke-width="4" points="60.0,248.8 240.0,81.6 420.0,123.7 600.0,95.5 780.0,76.5 960.0,41.2" />
+        <circle cx="60.0" cy="248.8" r="5" fill="#1f8f5f"/><text x="60.0" y="294" font-size="12" text-anchor="middle" fill="#607468">07/04</text><text x="60.0" y="236.8" font-size="11" text-anchor="middle" fill="#1f8f5f">1677.54</text><circle cx="240.0" cy="81.6" r="5" fill="#1f8f5f"/><text x="240.0" y="294" font-size="12" text-anchor="middle" fill="#607468">08/04</text><text x="240.0" y="69.6" font-size="11" text-anchor="middle" fill="#1f8f5f">1756.55</text><circle cx="420.0" cy="123.7" r="5" fill="#1f8f5f"/><text x="420.0" y="294" font-size="12" text-anchor="middle" fill="#607468">09/04</text><text x="420.0" y="111.7" font-size="11" text-anchor="middle" fill="#1f8f5f">1736.68</text><circle cx="600.0" cy="95.5" r="5" fill="#1f8f5f"/><text x="600.0" y="294" font-size="12" text-anchor="middle" fill="#607468">10/04</text><text x="600.0" y="83.5" font-size="11" text-anchor="middle" fill="#1f8f5f">1750.00</text><circle cx="780.0" cy="76.5" r="5" fill="#1f8f5f"/><text x="780.0" y="294" font-size="12" text-anchor="middle" fill="#607468">13/04</text><text x="780.0" y="64.5" font-size="11" text-anchor="middle" fill="#1f8f5f">1758.96</text><circle cx="960.0" cy="41.2" r="5" fill="#1f8f5f"/><text x="960.0" y="294" font-size="12" text-anchor="middle" fill="#607468">14/04</text><text x="960.0" y="29.2" font-size="11" text-anchor="middle" fill="#1f8f5f">1775.65</text>
+      </svg>
+
+      <h3 style="margin-top:10px;">Khối lượng giao dịch (triệu cổ phiếu)</h3>
+      <svg viewBox="0 0 980 220" role="img" aria-label="Khối lượng giao dịch 6 phiên">
+        <rect x="0" y="0" width="980" height="220" fill="white"/>
+        <line x1="60" y1="20" x2="60" y2="180" stroke="#c9d8ce"/>
+        <line x1="60" y1="180" x2="960" y2="180" stroke="#c9d8ce"/>
+        <rect x="88.0" y="113.1" width="80" height="66.9" rx="8" fill="#9fd2ad"/><text x="128.0" y="204" font-size="12" text-anchor="middle" fill="#607468">07/04</text><text x="128.0" y="105.1" font-size="11" text-anchor="middle" fill="#1f8f5f">515</text><rect x="238.0" y="34.5" width="80" height="145.5" rx="8" fill="#9fd2ad"/><text x="278.0" y="204" font-size="12" text-anchor="middle" fill="#607468">08/04</text><text x="278.0" y="26.5" font-size="11" text-anchor="middle" fill="#1f8f5f">1120</text><rect x="388.0" y="57.9" width="80" height="122.1" rx="8" fill="#9fd2ad"/><text x="428.0" y="204" font-size="12" text-anchor="middle" fill="#607468">09/04</text><text x="428.0" y="49.9" font-size="11" text-anchor="middle" fill="#1f8f5f">940</text><rect x="538.0" y="68.9" width="80" height="111.1" rx="8" fill="#9fd2ad"/><text x="578.0" y="204" font-size="12" text-anchor="middle" fill="#607468">10/04</text><text x="578.0" y="60.9" font-size="11" text-anchor="middle" fill="#1f8f5f">856</text><rect x="688.0" y="80.4" width="80" height="99.6" rx="8" fill="#9fd2ad"/><text x="728.0" y="204" font-size="12" text-anchor="middle" fill="#607468">13/04</text><text x="728.0" y="72.4" font-size="11" text-anchor="middle" fill="#1f8f5f">767</text><rect x="838.0" y="79.4" width="80" height="100.6" rx="8" fill="#9fd2ad"/><text x="878.0" y="204" font-size="12" text-anchor="middle" fill="#607468">14/04</text><text x="878.0" y="71.4" font-size="11" text-anchor="middle" fill="#1f8f5f">774</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <h2>4. Heatmap ngành trọng điểm</h2>
+      <div class="heatmap">
+        <div class="heatcell" style="background:#7cc48d; color:#173024;"><div class="name">Ngân hàng</div><div class="pct">+0.33%</div><div style="font-size:12px; opacity:.92;">Phiên 14/04/2026</div></div><div class="heatcell" style="background:#1f8f5f; color:#ffffff;"><div class="name">Thép</div><div class="pct">+3.01%</div><div style="font-size:12px; opacity:.92;">Phiên 14/04/2026</div></div><div class="heatcell" style="background:#1f8f5f; color:#ffffff;"><div class="name">Bất động sản</div><div class="pct">+3.27%</div><div style="font-size:12px; opacity:.92;">Phiên 14/04/2026</div></div><div class="heatcell" style="background:#d86b63; color:#ffffff;"><div class="name">Dầu khí</div><div class="pct">-2.49%</div><div style="font-size:12px; opacity:.92;">Phiên 14/04/2026</div></div>
+      </div>
+      <div class="legend">
+        <div><span class="dot" style="background:#1f8f5f"></span>Tăng mạnh</div>
+        <div><span class="dot" style="background:#7cc48d"></span>Tăng nhẹ</div>
+        <div><span class="dot" style="background:#f1d98b"></span>Trung tính</div>
+        <div><span class="dot" style="background:#d86b63"></span>Giảm</div>
+      </div>
+      <p class="small" style="margin-top:12px;">Bất động sản và thép là hai nhóm ghi nhận mức tăng nổi bật nhất trong rổ ngành theo các nguồn tổng hợp cuối phiên. Dầu khí là nhóm chịu áp lực điều chỉnh.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Ranking CTCK theo độ bullish / bearish</h2>
+      <div class="small">Thang điểm nội bộ 1–10, phản ánh mức độ lạc quan trong câu chữ và chiến lược khuyến nghị của từng báo cáo, không phải xếp hạng chính thức từ các CTCK.</div>
+      <table style="margin-top:10px;">
+        <tr><th>CTCK</th><th>Sắc thái</th><th style="width:42%;">Mức độ</th><th>Điểm</th></tr>
+        <tr><td><strong>TPS</strong></td><td>Tích cực</td><td><div class="rankbar"><div class="rankfill" style="width:88%"></div></div></td><td>8.8/10</td></tr><tr><td><strong>AIS</strong></td><td>Tích cực</td><td><div class="rankbar"><div class="rankfill" style="width:82%"></div></div></td><td>8.2/10</td></tr><tr><td><strong>VCBS</strong></td><td>Khá tích cực</td><td><div class="rankbar"><div class="rankfill" style="width:78%"></div></div></td><td>7.8/10</td></tr><tr><td><strong>VIX</strong></td><td>Tích cực có điều kiện</td><td><div class="rankbar"><div class="rankfill" style="width:69%"></div></div></td><td>6.9/10</td></tr><tr><td><strong>CSI</strong></td><td>Trung lập</td><td><div class="rankbar"><div class="rankfill" style="width:57%"></div></div></td><td>5.7/10</td></tr><tr><td><strong>SHS</strong></td><td>Thận trọng</td><td><div class="rankbar"><div class="rankfill" style="width:48%"></div></div></td><td>4.8/10</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <h2>6. Cổ phiếu được nhắc đáng chú ý</h2>
+      <table>
+        <tr><th>Mã</th><th>Khuyến nghị</th><th>Nguồn</th><th>Luận điểm ngắn</th></tr>
+        <tr><td><strong>DCM</strong></td><td><span class="badge positive">Mua</span></td><td>KBSV / Agriseco</td><td>Giá ure và kỳ vọng biên lợi nhuận cải thiện.</td></tr><tr><td><strong>PLX</strong></td><td><span class="badge positive">Mua</span></td><td>Agriseco</td><td>Hồi phục kỹ thuật, tín hiệu động lượng cải thiện.</td></tr><tr><td><strong>PVT</strong></td><td><span class="badge positive">Mua</span></td><td>Agriseco</td><td>Dòng tiền quay lại, thanh khoản cải thiện.</td></tr><tr><td><strong>POW</strong></td><td><span class="badge positive">Mua</span></td><td>SSI</td><td>Triển vọng điện khí và dự án Nhơn Trạch 3-4.</td></tr><tr><td><strong>HSG</strong></td><td><span class="badge positive">Mua</span></td><td>MBS</td><td>Chu kỳ thép thuận lợi hơn, triển vọng lợi nhuận cải thiện.</td></tr><tr><td><strong>ACV</strong></td><td><span class="badge neutral">Theo dõi</span></td><td>FPTS</td><td>Triển vọng dài hạn tích cực nhưng ngắn hạn còn áp lực.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>7. Khuyến nghị hành động</h2>
+      <ul>
+        <li>Duy trì tỷ trọng cổ phiếu ở mức trung bình – khá, ưu tiên danh mục gọn và dễ quản trị.</li>
+        <li>Tập trung vào các cổ phiếu có nền tích lũy tốt, hưởng lợi từ dòng tiền vào nhóm vốn hóa lớn hoặc có câu chuyện kết quả kinh doanh quý I tích cực.</li>
+        <li>Không mua đuổi khi chỉ số tiến gần vùng 1.780 – 1.800 điểm; chờ nhịp điều chỉnh để gia tăng vị thế.</li>
+        <li>Tiếp tục theo dõi giao dịch khối ngoại, thanh khoản thị trường và mức độ lan tỏa ngoài nhóm trụ để xác nhận độ bền của xu hướng.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>8. Kết luận</h2>
+      <p>Nhìn chung, bức tranh thị trường tại thời điểm 15/04/2026 đang nghiêng về kịch bản hồi phục tiếp diễn nhưng chưa bước sang trạng thái bứt phá hoàn toàn. Sự đồng thuận giữa các công ty chứng khoán nằm ở việc duy trì vị thế hiện tại, ưu tiên cơ cấu danh mục ở nhịp rung lắc và tránh tâm lý FOMO gần vùng kháng cự mạnh. Với khách hàng ưu tiên quản trị rủi ro, đây là giai đoạn phù hợp để chọn lọc cổ phiếu hơn là mở rộng danh mục một cách dàn trải.</p>
+      <div class="footnote">
+        <strong>Ghi chú dữ liệu:</strong> Biểu đồ VN-Index và khối lượng sử dụng chuỗi dữ liệu lịch sử các phiên gần nhất đến 14/04/2026. Heatmap ngành và phần ranking CTCK được tổng hợp từ các bản tin, nhận định thị trường và diễn biến cuối phiên công khai.
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
